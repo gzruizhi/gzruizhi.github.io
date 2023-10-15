@@ -1268,10 +1268,10 @@ header .toggle{ top:8px;}
 .inquiry_box{ width:100%; margin:0 auto; background-size:cover !important; padding:120px 0 60px; position:relative}
 .inquiry_box .bgs{ position:absolute; left:0; right:0; margin:0 auto; top:-1px}
 .inquiry_box .wrap{ width:60%; float:right; text-align:left}
-.inquiry_box .wrap .maintitle{ display:block; text-align:left; color:#333333; font-size:40px; font-family:'Cambria Bold'; text-transform:capitalize}
+.inquiry_box .wrap .maintitle{ display:block; text-align:left; color:#fff; font-size:40px; font-family:'Cambria Bold'; text-transform:capitalize}
 .inquiry_box .wrap .maintitle:after{ display:none;}
 .inquiry_box .inquiry_btn{ display:block; width:100%; padding-top:30px;}
-.inquiry_box .inquiry_btn a{ display:inline-block; width:auto; position:relative; padding:0 28px 0 74px; background:#ff6e00;font-family:'Cambria Bold'; color:#fff; font-size:18px; line-height:45px; text-transform:uppercase}
+.inquiry_box .inquiry_btn a{ display:inline-block; width:auto; position:relative; padding:0 28px 0 74px; background:#56b158;font-family:'Cambria Bold'; color:#fff; font-size:18px; line-height:45px; text-transform:uppercase}
 .inquiry_box .inquiry_btn a img{ position:absolute; left:26px; top:-8px}
 .inquiry_box .inquiry_btn a:hover{ background:#794239}
 
@@ -1686,7 +1686,7 @@ border-color:#ff6e00;}
 
 
 
-.mobile_nav{position:fixed;left:0;bottom:0;width:100%;padding:0 0 5px;display:none;z-index:99999998;box-shadow:0 0 10px 0 rgba(255,255,255,0.4);-webkit-box-shadow:0 0 15px 0 rgba(255,255,255,0.4);border-radius:2px 2px 0 0;background:#333;border-top:1px solid #eee;}
+.mobile_nav{position:fixed;left:0;bottom:0;width:100%;padding:0 0 5px;display:none;z-index:99999998;box-shadow:0 0 10px 0 rgba(255,110,0,0);-webkit-box-shadow:0 0 15px 0 rgba(255,110,0,0);border-radius:2px 2px 0 0;background:#ff6e00;border-top:1px solid #eee;}
 .mobile_nav a{display:inline-block;width:20%;padding:0 10px;float:left;text-align:center;}
 .mobile_nav a i{width:28px;height:28px;display:inline-block;background-repeat:no-repeat;background-image: url(../images/icon.png);}
 .mobile_nav a p{color:#fff;padding-top:5px;font-size: 12px;text-transform:uppercase;line-height:12px;margin:0;}
