@@ -95,5 +95,84 @@ $(document).ready(toDoFooter);
 $(window).resize(toDoFooter);
 
 
+/*shouji xinxi*/
+var form = document.getElementById("formId");
+	  
+	  function showPopup(message) {
+  // Create a new element for the popup box
+  var popup = document.createElement('div');
+
+  // Create a new element for the popup message
+  var popupMessage = document.createElement('p');
+  popupMessage.textContent = message;
+
+  // Create a new element for the confirmation button
+  var confirmButton = document.createElement('button');
+  confirmButton.textContent = 'OK';
+
+  // Style the popup box
+  popup.style.position = 'fixed';
+  popup.style.left = '50%';
+  popup.style.top = '50%';
+  popup.style.transform = 'translate(-50%, -50%)';
+  popup.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  popup.style.color = '#fff';
+  popup.style.padding = '20px';
+  popup.style.borderRadius = '5px';
+  popup.style.zIndex = '9999';
+
+  confirmButton.style.display = 'block';
+  confirmButton.style.margin = '0 auto';
+  confirmButton.style.width='130px'
+  confirmButton.style.backgroundColor = 'rgba(255, 110, 0)';
 
 
+  // Append the message and button to the popup box
+  popup.appendChild(popupMessage);
+  popup.appendChild(confirmButton);
+
+  // Append the popup box to the body
+  document.body.appendChild(popup);
+
+  // Add event listener to the confirmation button
+  confirmButton.addEventListener('click', function() {
+    // Remove the popup box when the button is clicked
+    document.body.removeChild(popup);
+  });
+}
+	  async function handleSubmit(event) {
+		event.preventDefault();
+		var status = document.getElementById("my-form-status");
+		var data = new FormData(event.target);
+		fetch(event.target.action, {
+		  method: form.method,
+		  body: data,
+		  headers: {
+			  'Accept': 'application/json'
+		  }
+		}).then(response => {
+		  if (response.ok) {
+			
+			document.getElementById('modal-lan').className="select-modal";
+			showPopup('Thank you! We have received your message and will contact you soon');
+			
+		  } else {
+			response.json().then(data => {
+			  if (Object.hasOwn(data, 'errors')) {
+				status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+			  } else {		
+				showPopup('Oops! There was a problem submitting your form');
+			  }
+			})
+		  }
+		}).catch(error => {
+			showPopup('Oops! There was a problem submitting your form');
+		});
+	  }
+	  form.addEventListener("submit", handleSubmit)
+
+	  var form2 = document.getElementById("formId_a2");
+	  form2.addEventListener("submit", handleSubmit)
+
+	  var form3 = document.getElementById("formId_a3");
+	  form3.addEventListener("submit", handleSubmit)

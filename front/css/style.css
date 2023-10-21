@@ -1438,6 +1438,8 @@ display: block;	-webkit-transform: translateZ(0)}
 .footer_mess ul li span{ display:block; position:relative; width:100%; border:1px #4f4f4f solid}
 .footer_mess ul li span:after{ position:absolute; content:''; width:20px; height:15px; background:url(../images/mail_m.png) no-repeat; right:12px; top:13px}
 .footer_mess ul li span.ms_p:after{width:20px; height:20px; background:url(../images/tel_m.png) no-repeat; top:10px}
+.footer_mess ul li span.ms_c:after{width:20px; height:20px; background:url(../images/company2.png) no-repeat; top:10px}
+.footer_mess ul li span.ms_n:after{width:20px; height:20px; background:url(../images/username2.png) no-repeat; top:10px}
 .footer_mess ul li span.ms_m:after{width:21px; height:22px; background:url(../images/mess.png) no-repeat; top:10px}
 .footer_mess ul li input{display:block; width:100%; background:none; border:none; outline:none; line-height:43px; padding:0 14px; color:#eeeeee; font-size:14px;} 
 .footer_mess ul li textarea{display:block; width:100%; background:none; border:none; outline:none; line-height:43px; padding:0 14px; color:#eeeeee; font-size:14px; min-height:110px; max-height:150px; max-width:100%} 
