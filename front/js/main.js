@@ -154,6 +154,9 @@ var form = document.getElementById("formId");
 		  if (response.ok) {
 			
 			document.getElementById('modal-lan').className="select-modal";
+			document.getElementById('onlineService').style.display="none";
+			document.getElementById('floatShow').style.display="block";
+			document.getElementById('floatShow').style.opacity='1';
 			showPopup('Thank you! We have received your message and will contact you soon');
 			
 		  } else {
@@ -176,3 +179,6 @@ var form = document.getElementById("formId");
 
 	  var form3 = document.getElementById("formId_a3");
 	  form3.addEventListener("submit", handleSubmit)
+
+	  var emailForm = document.getElementById("email_form");
+	  emailForm.addEventListener("submit", handleSubmit)
