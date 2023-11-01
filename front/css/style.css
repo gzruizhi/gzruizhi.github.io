@@ -1524,7 +1524,7 @@ transform: translateY(-3px); } }
 .livechat-girl.animated { opacity: 1; transform: translateY(-30px); -webkit-transform: translateY(-30px); -ms-transform: translateY(-30px) }
 .livechat-girl:after { content: ''; width: 10px; height: 10px; border-radius: 50%; background-image: linear-gradient(to bottom, #ff6e00, #ff6e00); position: absolute; right: 1px; top: 1px; z-index: 50 }
 .livechat-girl .girl { position: absolute; top: 0; left: 0; width: 100%; height: auto; z-index: 50; background:#ff6e00; border-radius: 50%; }
-.livechat-girl .animated-circles .circle { background: rgba(235,163,151,.5); width: 50px; height: 50px; border-radius: 50%; position: absolute; z-index: 49; transform: scale(1); -webkit-transform: scale(1) }
+.livechat-girl .animated-circles .circle { background: rgba(255,110,0,); width: 50px; height: 50px; border-radius: 50%; position: absolute; z-index: 49; transform: scale(1); -webkit-transform: scale(1) }
 .livechat-girl .animated-circles.animated .c-1 { animation: 2s scaleToggleOne cubic-bezier(.241,.85,.7, .94) forwards }
 .livechat-girl .animated-circles.animated .c-2 { animation: 2.5s scaleToggleTwo cubic-bezier(.241,.85,.7, .94) forwards }
 .livechat-girl .animated-circles.animated .c-3 { animation: 3s scaleToggleThree cubic-bezier(.241,.85,.7, .94) forwards }
