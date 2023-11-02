@@ -182,3 +182,18 @@ var form = document.getElementById("formId");
 
 	  var emailForm = document.getElementById("email_form");
 	  emailForm.addEventListener("submit", handleSubmit)
+
+
+	  function playVideo() {
+		var modal = document.getElementById("videoModal");
+		var video = document.getElementById("videoPlayer");
+		modal.style.display = "block";
+		video.play();
+	  }
+	  
+	  function closeVideo() {
+		var modal = document.getElementById("videoModal");
+		var video = document.getElementById("videoPlayer");
+		modal.style.display = "none";
+		video.pause();
+	  }
