@@ -175,25 +175,26 @@ var form = document.getElementById("formId");
 	  form.addEventListener("submit", handleSubmit)
 
 	  var form2 = document.getElementById("formId_a2");
-	  form2.addEventListener("submit", handleSubmit)
-
-	  var form3 = document.getElementById("formId_a3");
-	  form3.addEventListener("submit", handleSubmit)
-
-	  var emailForm = document.getElementById("email_form");
-	  emailForm.addEventListener("submit", handleSubmit)
-
-
-	  function playVideo() {
-		var modal = document.getElementById("videoModal");
-		var video = document.getElementById("videoPlayer");
-		modal.style.display = "block";
-		video.play();
+	  if(form2!=null){
+		form2.addEventListener("submit", handleSubmit);
 	  }
 	  
-	  function closeVideo() {
-		var modal = document.getElementById("videoModal");
-		var video = document.getElementById("videoPlayer");
-		modal.style.display = "none";
-		video.pause();
+
+	  var form3 = document.getElementById("formId_a3");
+	  if(form3!=null){
+	  form3.addEventListener("submit", handleSubmit);
 	  }
+
+
+	  var emailForm = document.getElementById("email_form");
+	  if(emailForm!=null){
+	  emailForm.addEventListener("submit", handleSubmit);
+	  }
+
+	  const thumbnail = document.getElementById('video-thumbnail');
+
+		// 添加点击事件监听器
+		thumbnail.addEventListener('click', function() {
+			// 使用 alert 弹出错误信息
+			alert('Network busy. Please try again later.');
+		});
