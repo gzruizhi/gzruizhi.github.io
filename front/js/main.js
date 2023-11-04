@@ -191,10 +191,29 @@ var form = document.getElementById("formId");
 	  emailForm.addEventListener("submit", handleSubmit);
 	  }
 
-	  const thumbnail = document.getElementById('video-thumbnail');
+	  const thumbnail1 = document.getElementById('video-111');
+	  const thumbnail2 = document.getElementById('video-222');
+	  const thumbnail3 = document.getElementById('video-333');
 
+	  if(thumbnail1 != null){
+	  // 添加点击事件监听器
+	  thumbnail1.addEventListener('click', function() {
+	  // 使用 alert 弹出错误信息
+	  alert('Network busy. Please try again later.');
+	  });
+	  }
+	  if(thumbnail2 != null){
 		// 添加点击事件监听器
-		thumbnail.addEventListener('click', function() {
-			// 使用 alert 弹出错误信息
-			alert('Network busy. Please try again later.');
+		thumbnail2.addEventListener('click', function() {
+		// 使用 alert 弹出错误信息
+		alert('Network busy. Please try again later.');
 		});
+		}
+
+	if(thumbnail3 != null){
+		// 添加点击事件监听器
+		thumbnail3.addEventListener('click', function() {
+		// 使用 alert 弹出错误信息
+		alert('Network busy. Please try again later.');
+		});
+		}
