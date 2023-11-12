@@ -2024,7 +2024,7 @@ ul.mtree ul li a{display:block;color:#555;font-size:16px;}
 ul.mtree>li>ul>li>a{ font-size:15px !important;  padding-left:15px; text-transform: capitalize}
 ul.mtree>li>ul>li>a:before{content:"";}
 ul.mtree ul li:hover a{color:#ff6e00;}
-ul.mtree li ul li.mtree-open a{color:#ff000;text-decoration:none;}
+ul.mtree li ul li.mtree-open a{color:#ff0000;text-decoration:none;}
 ul.mtree .mtree-level-2{ margin-top:0px; border:none; padding:0px; margin-bottom:0; background:#eee;}
 ul.mtree li ul.mtree-level-2 li a{color:#808080;font-weight:normal;font-size:16px; padding:5px 0 5px 28px!important; border-bottom:1px #fff solid}
 ul.mtree .mtree-level-2 li a:hover{text-decoration:underline;color:#ff6e00;font-weight:normal;}
