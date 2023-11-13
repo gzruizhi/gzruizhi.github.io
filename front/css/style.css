@@ -875,7 +875,7 @@ content:'';display:inline-block;background:#808080;width:20px;height:2px;margin:
 @media only screen and (max-width:992px) {  
 .header .container-big{ display:block;}
 .header_top,.mainmenu-area{ display:none !important} 
-.height{padding-top:82px !important;}
+.height{padding-top:70px !important;}
 header{box-shadow: none;}
 .header{background:#fff; display: inline-block;}
 .language .menu-title p{color: #666;}
@@ -883,9 +883,9 @@ header{box-shadow: none;}
 header.small .language .menu{margin-left: 20px;}
 .language .menu-title{height: 50px; border-radius: 0; width: 50px; background: none; border-right: 1px solid rgba(255,255,255,0.15);}
 .language .menu-dropdown{left: 0px;}
-.header{position: initial; height:82px; width: 100%;}
+.header{position: initial; height:70px; width: 100%;}
 .header #logo{ position: absolute; left: 20px; top: 5px; margin: 0; padding:0; border-right:none; }
-header.small{height: 82px;}
+header.small{height: 70px;}
 .language .menu-title i{color: #999;}
 .header #logo img{max-width:150px !important;}
 .search_box{ position:absolute; right:60px; top:28px;} 
