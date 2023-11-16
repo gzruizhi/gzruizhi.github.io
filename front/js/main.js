@@ -217,3 +217,41 @@ var form = document.getElementById("formId");
 		alert('Network busy. Please try again later.');
 		});
 		}
+		
+
+	// 获取分享按钮元素
+	var twitterShareButton = document.getElementById("twitterShareButton");
+	
+	if(twitterShareButton != null){	
+		// 添加点击事件监听器
+	//  twitterShareButton.addEventListener("click", shareOnTwitter);
+
+		twitterShareButton.addEventListener('click', function() {
+		// 读取参数值
+		//var tweetText = twitterShareButton.dataset.param1;
+		// var tweetUrl = twitterShareButton.dataset.param2;
+	
+		var h1Element = document.querySelector('h1');
+
+		// 获取 <h1> 的文本内容
+		var tweetText = h1Element.textContent;
+
+		// 获取当前页面的 URL
+		var url = window.location.href;
+
+		// 提取文件名
+		var fileName = url.substring(url.lastIndexOf('/') + 1);
+		var tweetUrl = 'https://www.ruizhipack.com/'+ fileName;		
+
+		// 创建用于分享的URL
+		var TwitterShareUrl = "https://twitter.com/intent/tweet?text=" 
+		+ encodeURIComponent(tweetText) 
+		+ "&url=" + encodeURIComponent(tweetUrl)
+			+ "&cardname=summary";
+
+		// 在新窗口中打开Twitter分享页面
+		window.open(TwitterShareUrl);
+		});
+		
+	}
+	
