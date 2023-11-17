@@ -271,7 +271,6 @@ var form = document.getElementById("formId");
 			var facebookShareUrl = 'https://www.facebook.com/sharer/sharer.php?';
 			facebookShareUrl = facebookShareUrl+'u=' + encodeURIComponent(shareUrl);
 	
-			
 			// 在新窗口中打开 Facebook 分享页面
 			window.open(facebookShareUrl);
 		});
