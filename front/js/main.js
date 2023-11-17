@@ -254,4 +254,25 @@ var form = document.getElementById("formId");
 		});
 		
 	}
+
+	var facebookShareButton = document.getElementById("facebookShareButton");
+
+
+	if (facebookShareButton != null) {
+		facebookShareButton.addEventListener('click', function() {
+			var h1Element = document.querySelector('h1');
+			var shareText = h1Element.textContent;
+			var url = window.location.href;
 	
+			// 提取文件名
+			var fileName = url.substring(url.lastIndexOf('/') + 1);
+			var shareUrl = 'https://www.ruizhipack.com/'+ fileName;	
+
+			var facebookShareUrl = 'https://www.facebook.com/sharer/sharer.php?';
+			facebookShareUrl = facebookShareUrl+'u=' + encodeURIComponent(shareUrl);
+	
+			
+			// 在新窗口中打开 Facebook 分享页面
+			window.open(facebookShareUrl);
+		});
+	}
