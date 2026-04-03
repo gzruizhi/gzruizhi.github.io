@@ -3,7 +3,352 @@
  * Each entry: coherent sections; no shared template paragraphs across articles.
  */
 export const ARTICLE_BODIES = [
-  // 0 — mono-material PP
+  // 0 — PFAS-free packaging
+  {
+    listImage: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    ogImage:
+      "https://www.ruizhipack.com/storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    sections: [
+      {
+        h2: "Why PFAS-free packaging became a board-level topic in 2025",
+        ps: [
+          "In late 2025, “PFAS-free” stopped being a niche lab request and became a supplier qualification topic. Packaging is increasingly treated like an ingredient-adjacent material because regulatory questions often look beyond the final product and focus on what touches, surrounds, or coats the formula over time.",
+          "For cosmetics brands exporting tubes, caps, and coated laminates, the risk is not only compliance—it is also credibility. If your claims cannot be substantiated across the whole packaging stack (tube body, cap, liner, adhesives, coatings, inks), marketing copy can trigger extra audits, slower approvals, and expensive rework.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "PFAS-free packaging evidence approach for cosmetic tube programs.",
+          caption:
+            "PFAS-free is an evidence scope: tube materials, caps, liners, adhesives, coatings, inks.",
+        },
+      },
+      {
+        h2: "Tube, cap, and coating: what to ask before you negotiate price",
+        ps: [
+          "Start with a simple RFQ change: ask for chemical composition declarations for the entire system, not just a one-page “complies with X” letter. Clarify which components are in scope (tube extrusion resin, pigments/masterbatch, internal coating/lacquer where applicable, cap elastomers, threads, and any functional surfaces).",
+          "Then separate “fluorine-free” from “PFAS-free.” Many suppliers can remove obvious fluorinated finishes, but the real question is whether the supplier can demonstrate absence of targeted PFAS substances under the methods your market expects.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Scope and documentation checklist for PFAS-free tube and closure systems.",
+          caption:
+            "Ask for scope mapping first, then evidence style: methods, substance lists, and change-management commitments.",
+        },
+      },
+      {
+        h2: "Hidden sources: adhesives, release agents, liners, and barrier films",
+        ps: [
+          "PFAS questions frequently show up in the “small things” that brand decks ignore: label adhesives, overcap liners, release coatings on process tooling, and barrier-film treatments used to manage oxygen or aroma. Even if the tube resin is not the concern, downstream materials can create an audit trail you do not want to discover at sampling.",
+          "For tube programs, also check inks and varnishes. Some decorative systems use specialized binders to improve rub resistance and gloss retention. If those systems were sourced from suppliers without PFAS documentation discipline, they can become the bottleneck at certification time.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Downstream materials that affect PFAS-free claims in cosmetic packaging.",
+          caption:
+            "Hidden sources live in adhesives, overcap liners, and coating/ink layers—confirm evidence across the stack.",
+        },
+      },
+      {
+        h2: "Turn PFAS questions into testable documentation (not promises)",
+        ps: [
+          "Write the documentation you need in testable terms. Ask for supplier declarations supported by a defined approach: analytical screening, targeted tests where required, and an explicit “substance list” (what exactly is being claimed as absent).",
+          "Require traceability by lot or at least by production batch and change-management. If the supplier changes a masterbatch vendor or coating supplier, ask whether they re-validate and how quickly they inform you—because your on-pack claim depends on continuity, not a one-time stamp.",
+        ],
+      },
+      {
+        h2: "On-pack language and marketing risk: avoid a green-claims backfire",
+        ps: [
+          "PFAS-free packaging is a claim category where “simple wording” can be risky. If you use a broad statement without the documented scope, regulators and retailers may interpret it as covering every component, accessory, and coating layer.",
+          "A safer workflow is: confirm claim scope, confirm evidence scope, and then decide what to put on-pack. When in doubt, treat PFAS-free messaging like regulatory communication, not like lifestyle copy—because the penalty for over-claiming is usually larger than the effort needed to do it correctly.",
+        ],
+      },
+      {
+        h2: "A practical PFAS-free checklist you can reuse for every RFQ",
+        ps: [
+          "Ask for scope mapping first: which tube/cap/coating/ink/adhesive components are included in the PFAS-free statement. Then request evidence style: declarations with method references, substance lists, and change-management commitments.",
+          "Finally, add a sampling rule: do not treat compliance paperwork as “enough.” For export programs, align sampling quantities and approval timing so you can validate claims before your tooling schedule forces last-minute supplier swaps.",
+        ],
+      },
+    ],
+  },
+
+  // 1 — Digital Product Passport (DPP)
+  {
+    listImage: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    ogImage:
+      "https://www.ruizhipack.com/storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    sections: [
+      {
+        h2: "From material IDs to real data: why DPP became a 2026 packaging keyword",
+        ps: [
+          "Digital Product Passport (DPP) is quickly becoming the search term behind buyer questionnaires: not just “what resin is it,” but “what data can you prove, export, and update.” For cosmetics packaging, DPP pressure often arrives as data-feed requests to retailers and distributors, then flows into supplier onboarding requirements.",
+          "If you supply cosmetic tubes and closures, your buyers may ask for structured attributes that map to packaging datasets: material composition, separability statements, ink/adhesive details, and sometimes recyclability documentation formatted for automated review.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "DPP-ready packaging data flow for cosmetic tubes and closures.",
+          caption:
+            "DPP is operational: structured component and claim evidence must be exportable and updatable.",
+        },
+      },
+      {
+        h2: "Where cosmetic tube data lives today (and why it is fragmented)",
+        ps: [
+          "Most tube programs store the truth in different places: resin declarations in one folder, coating specs in another, labeling information in prepress docs, and recycling letters in sustainability reports. DPP shifts the expectation: data must be consistent, machine-friendly, and reproducible when auditors ask for “the same SKU, same claim, new export channel.”",
+          "This fragmentation is also where mistakes happen. If your label stock changes, or if the cap elastomer supplier updates a formulation, your DPP must reflect the update. Otherwise, your dataset becomes a mismatch artifact—perfect for SEO traffic, but a problem for compliance teams.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Fragmented packaging documentation that must be unified for DPP.",
+          caption:
+            "Data fragmentation creates SKU mismatch risk—link parts across manufacturing and prepress.",
+        },
+      },
+      {
+        h2: "Supplier responsibilities: what you should export with your tubes",
+        ps: [
+          "Define what you can provide reliably: a component list, each component’s material type, evidence for inks/adhesives where relevant, and a statement about separability/disassembly assumptions for the end market. Buyers do not want “we think it is recyclable”—they want traceable claims tied to defined scenarios.",
+          "Then include change-management metadata: update dates, part-number mapping, and whether documentation is valid for new production lots. That is the practical difference between a static letter and a DPP-ready dataset.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "DPP evidence pack for component lists and change-managed documentation.",
+          caption:
+            "Export what you can repeatably verify: components, evidence scope, update metadata, and mapping.",
+        },
+      },
+      {
+        h2: "How to structure packaging data feeds your buyer’s AI can read",
+        ps: [
+          "Use a stable schema: SKU identifiers, component classes (tube body/cap/liner/label), material composition percentages when available, and claim scope fields. Keep language consistent: if you say “compatible with local PP recycling,” do not later switch to “widely recycled,” because DPP datasets can be compared automatically across time.",
+          "If you are unsure what your buyer’s downstream system expects, ask for an example import file early. In DPP-style workflows, format is not a detail—it is the difference between “approved” and “returned for rework.”",
+        ],
+      },
+      {
+        h2: "Avoiding data gaps and mismatched SKUs",
+        ps: [
+          "The most common DPP failure mode in tube programs is SKU mismatch: different cap variants, different label stocks, and different finishing coatings that share the same product name in sales systems. Fix this by linking part numbers across manufacturing and prepress.",
+          "For fast launches, enforce a release gate: if a supplier cannot confirm the dataset completeness for the configuration you are tooling, delay the DPP submission. Better a short schedule slip than an approval loop that resets your sampling calendar.",
+        ],
+      },
+      {
+        h2: "Bottom line: treat DPP as packaging operations, not a document",
+        ps: [
+          "DPP is operational. It requires repeatable inputs and a predictable update process. When you design your tube program with DPP data flow in mind, you reduce both buyer friction and long-term compliance risk.",
+          "If you want the easiest win for 2026, build a reusable “DPP evidence pack” template for tube programs and closures. Then map every new SKU to the template before you print labels.",
+        ],
+      },
+    ],
+  },
+
+  // 2 — Green claims + PCR labeling
+  {
+    listImage: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    ogImage:
+      "https://www.ruizhipack.com/storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    sections: [
+      {
+        h2: "Why “PCR” wording can trigger more questions than it attracts traffic",
+        ps: [
+          "In 2026, recycled content is no longer a free marketing advantage. Retailers and compliance reviewers increasingly treat “PCR” claims as a documentation exercise: what PCR source, what percentage scope, what evidence, and what limits. If you only chase conversion, you can lose approval speed.",
+          "For cosmetics tube suppliers and brand buyers, the key phrase trend is “green claims substantiation.” Long-tail queries like “PCR tube claim evidence,” “recycled content labeling scope,” and “how to avoid misleading sustainability claims” are becoming common in sourcing conversations.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "PCR claim scope and evidence discipline for cosmetic tube programs.",
+          caption:
+            "Safer PCR claims define scope and evidence—avoid implying the whole pack equals the PCR number.",
+        },
+      },
+      {
+        h2: "PCR claims that are safer: define scope and lock evidence",
+        ps: [
+          "Separate two concepts buyers confuse: PCR content in the packaging material versus PCR content in the supply chain. Your label statement should match the evidence scope. If your PCR declaration is by weight of the tube body only, do not imply the entire pack assembly includes the same PCR percentage.",
+          "Also lock time validity. If your PCR supplier changes lot composition or reduces traceability quality, your claim scope must update. “We used PCR last quarter” is not the same as “this batch supports the claim you printed.”",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Chain-of-custody and time-valid evidence for PCR labeling.",
+          caption:
+            "PCR documentation needs chain-of-custody and time validity tied to the production lots behind your claim.",
+        },
+      },
+      {
+        h2: "Traceability and chain-of-custody for PCR cosmetic tubes",
+        ps: [
+          "PCR documentation needs a chain-of-custody narrative that is easy to audit. Ask for lot-level linkage: how finished tubes connect to inbound resin batches, and how documentation can be refreshed if a retailer changes their questionnaire format.",
+          "If you expect color drift and odor variability, treat testing as part of claims substantiation. When a PCR shift affects perceived quality, customers will still complain—even if the PCR number is correct.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Traceability workflow that supports PCR claims for cosmetic tubes.",
+          caption:
+            "Link finished tubes to resin lots and define how evidence refresh works when questionnaires change.",
+        },
+      },
+      {
+        h2: "Color drift, performance, and claims are one system",
+        ps: [
+          "PCR blends can change pigmentation behavior and surface energy, impacting ink adhesion and hot foil consistency. That means your decoration system can become a hidden variable in PCR claim performance—even when the packaging is technically compliant.",
+          "To make your claim operational, define acceptance tests tied to your PCR configuration: color delta thresholds, rub/adhesion checks after flexing, and sensory stability checks relevant to your formula categories.",
+        ],
+      },
+      {
+        h2: "Label design: disclosure, recyclability icons, and disclaimers",
+        ps: [
+          "A clean PCR label is not only about style. It is about precision: clarify which component the percentage refers to, avoid stacking multiple sustainability icons without matching evidence, and ensure recyclability text does not over-promise for multi-material assemblies.",
+          "Consider using footnote-style language on the packaging back panel (where space allows) to clarify claim scope. It is usually cheaper than replacing print runs after a retailer rejects your current wording.",
+        ],
+      },
+      {
+        h2: "Action checklist for 2026 RFQs",
+        ps: [
+          "Ask your tube supplier for PCR evidence in advance: resin source statement, PCR percentage basis (by weight and component), lot traceability method, and change-management conditions. Then ask your decorator for documentation about inks/varnishes used on the PCR-configured substrate.",
+          "Finally, plan your approval loop: claim verification should happen alongside prepress, not after the decoration is already locked. That is the practical way to protect both SEO-friendly sustainability copy and compliance speed.",
+        ],
+      },
+    ],
+  },
+
+  // 3 — Microplastics risk (inks/coatings/abrasion)
+  {
+    listImage: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    ogImage:
+      "https://www.ruizhipack.com/storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    sections: [
+      {
+        h2: "Microplastics in cosmetic packaging: why “ink and abrasion” is the new hotspot",
+        ps: [
+          "As microplastics concerns expand from environment headlines into consumer awareness, buyers ask a different question for cosmetic tube programs: not “is the tube plastic,” but “can packaging wear generate particles and how is it controlled.” This is why long-tail queries like “microplastics from packaging coatings” and “ink abrasion particle control” are rising in supplier calls.",
+          "Even if your tube resin is stable, abrasion cycles—storage vibration, squeezing mechanics, and shipping impact—can influence coating wear. If the wear is not controlled, particle release risk becomes a real discussion point for audits.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Ink and abrasion risk control for cosmetic tube decoration systems.",
+          caption:
+            "Microplastics control starts with durability: coating adhesion, flex endurance, and wear-driven particle risk assessment.",
+        },
+      },
+      {
+        h2: "Where microplastic risk can start in a tube system",
+        ps: [
+          "Think in layers: outer decorations (inks, varnishes, coatings), label stocks and adhesives, and functional features like anti-slip textures. Over time, flexing and rub can create micro-fragment pathways if the coating adhesion and formulation are not engineered for durability.",
+          "Microplastics risk conversations also include cleaning and consumer misuse. If consumers open, reclose, or scrape surfaces in ways your tests do not model, you can under-estimate wear in the real usage cycle.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Layered packaging wear pathways that affect micro-fragment risk.",
+          caption:
+            "Evaluate decorations, label adhesives, and functional textures together—wear is a system behavior.",
+        },
+      },
+      {
+        h2: "Ink and coating selection: what to evaluate beyond gloss and rub",
+        ps: [
+          "Rub resistance is necessary, but it is not sufficient. Ask for evidence of coating integrity after repeated squeeze and flex cycles. If possible, require a defined adhesion retention profile and a clear statement about what happens when coatings are exposed to your formula solvents and fragrances.",
+          "Also clarify binder systems and pigment types used in decorative layers. Suppliers should be able to provide composition declarations and—when required—analytical screening relevant to the substances that concern your market.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Coating selection evidence beyond gloss and short rub tests.",
+          caption:
+            "Selection must include adhesion retention and exposure robustness—durability is the real microplastics control lever.",
+        },
+      },
+      {
+        h2: "Testing protocol: adhesion, flexing, and particle-release indicators",
+        ps: [
+          "Design your testing as an abrasion narrative. Combine adhesion checks, visual wear scoring, and flex endurance under conditions that resemble shipping and shelf-life stress. If your program is high-risk (premium coatings, heavy textures, or complex label systems), add particle-release indicators with an agreed method.",
+          "Document test assumptions. Auditors care about “what you tested” and “how your test represents the end market.” When you write it down, you reduce debate during compliance review.",
+        ],
+      },
+      {
+        h2: "Supplier Q&A library for production sampling",
+        ps: [
+          "Create a question library you reuse: coating adhesion retention, label adhesive wear behavior, cleaning resistance, solvent exposure robustness, and whether the supplier can confirm composition stability across production lots.",
+          "For speed, align sampling windows with your test plan. If you request abrasion tests too late, you will either accept risk to protect schedule or rework too late to keep your print cycle efficient.",
+        ],
+      },
+      {
+        h2: "Takeaway: treat durability as a microplastics control lever",
+        ps: [
+          "Microplastics control is not only a materials chemistry problem. It is a durability engineering problem for coatings and decorations under real abrasion cycles. When you treat it that way, you improve both compliance outcomes and brand perception.",
+          "If you are starting in 2026, prioritize programs with high coating complexity and high consumer handling risk. Build evidence once, then extend the same test logic across SKUs.",
+        ],
+      },
+    ],
+  },
+
+  // 4 — Refill and reuse systems
+  {
+    listImage: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    ogImage:
+      "https://www.ruizhipack.com/storage/uploads/images/202511/mono-pp-tubes-hero.png",
+    sections: [
+      {
+        h2: "Refill and reuse in cosmetics: the trend that keeps returning to packaging tables",
+        ps: [
+          "Refill and reuse is a long-running sustainability concept, but 2026 is when it becomes operational for more brands: return logistics, hygiene proof, and durable component design. Buyers increasingly search “refillable tube system,” “returnable cosmetic packaging,” and “reuse logistics cost” when they build 2026 sustainability roadmaps.",
+          "The key shift is that reuse is not only about materials. It is about engineering repeatability: how a consumer handles the pack, how the pack survives multiple cycles, and how the supply chain processes returns without turning the program into a quality liability.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Refill and reuse program design for cosmetic tube systems.",
+          caption:
+            "Reuse scales only when you engineer hygiene, closure QC, and return logistics as a system.",
+        },
+      },
+      {
+        h2: "Tube vs jar vs pump: what changes in a reuse model",
+        ps: [
+          "A tube-style format can work for reuse because it is easier to close and less likely to require a spatula interface. However, reuse adds new requirements: closure robustness across repeated handling, prevention of contamination at the opening, and confirmation that the packaging can withstand repeated filling and reprocessing steps.",
+          "Jars often face higher contamination assumptions. Pumps require careful sanitation controls. If your brand wants refill scale, evaluate which dispensing interface best supports hygiene consistency while staying compatible with your formula viscosity and particulates.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Dispensing interface choices for refillable cosmetic tube reuse.",
+          caption:
+            "Tube closures can reduce hygiene friction, but reuse still needs repeatable sealing performance over cycles.",
+        },
+      },
+      {
+        h2: "Hygiene, durability, and QC for returnable units",
+        ps: [
+          "Reuse programs need QC gates that go beyond cosmetic appearance. Verify sealing performance after repeated cycles, confirm that liners and threads maintain fit, and align tolerance checks with closure suppliers. In practice, the riskiest part is often the cap interface, not the container wall.",
+          "Also model real-world misuse: consumers may store units upside down, drop them, or reuse them after long storage. Your testing must include these scenarios, or your program will discover failure modes in the field.",
+        ],
+        figure: {
+          src: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
+          alt: "Quality control and durability testing for returnable refill units.",
+          caption:
+            "Reuse QC must include misuse scenarios; cap interface durability is usually the critical failure mode.",
+        },
+      },
+      {
+        h2: "Reverse supply chain: planning the logistics you cannot avoid",
+        ps: [
+          "Refillable systems succeed when reverse logistics are planned early: return rates, sorting rules, cleaning/sanitization assumptions, and when units are removed from the loop. If you ignore this, even a technically good pack can fail economically.",
+          "Build a return-to-reuse policy: define eligibility, define cleaning steps, and define who owns the evidence. For B2B programs, a small documentation pack can reduce partner friction and speed approvals.",
+        ],
+      },
+      {
+        h2: "Sustainability metrics that matter for AI search and audits",
+        ps: [
+          "Avoid generic claims. Define what you can measure: number of cycles, failure rates by defect mode, and energy/material assumptions tied to your return model. When your metrics are specific, you can produce audit-friendly evidence and also generate SEO content that users actually trust.",
+          "In your content strategy, include long-tail phrases like “reuse cycle testing,” “returnable packaging QA,” and “refill system documentation.” These terms match the questions buyers ask when they evaluate vendor credibility.",
+        ],
+      },
+      {
+        h2: "Conclusion: reuse is a design system, not a copywriting promise",
+        ps: [
+          "If you treat reuse as an engineering system—dispensing interface, closure QC, hygiene workflow, and reverse logistics—you can design a refill program that scales. If you treat it as a slogan, you will likely pay for rework and customer dissatisfaction.",
+          "Start with a pilot that measures cycles and failures. Then expand SKU coverage only when your evidence pack shows stable performance in the real usage cycle.",
+        ],
+      },
+    ],
+  },
+
+  // 5 — mono-material PP
   {
     listImage: "storage/uploads/images/202511/mono-pp-tubes-hero.png",
     ogImage:

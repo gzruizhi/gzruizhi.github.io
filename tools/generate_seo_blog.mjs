@@ -1,5 +1,5 @@
 /**
- * Generate 30 SEO blog HTML pages + blog.html / blog_p2.html / blog_p3.html
+ * Generate SEO blog HTML pages + blog.html / blog_p2.html / blog_p3.html / blog_p4.html ...
  * Run: node tools/generate_seo_blog.mjs
  */
 import fs from "fs";
@@ -14,7 +14,14 @@ import {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const TEMPLATE = path.join(ROOT, "blog-003.html");
+let TEMPLATE = path.join(ROOT, "blog-003.html");
+const TEMPLATE_FALLBACK = path.join(
+  ROOT,
+  "mono-material-pp-recyclable-cosmetic-tube-design-trends.html",
+);
+if (!fs.existsSync(TEMPLATE)) {
+  TEMPLATE = TEMPLATE_FALLBACK;
+}
 const BLOG_LIST_SRC = path.join(ROOT, "blog.html");
 const OG_IMAGE =
   "https://www.ruizhipack.com/storage/uploads/images/202206/02/1654134408_dkJGOYZjC3.jpg";
@@ -35,8 +42,38 @@ const MONTH_NAMES = [
   "July", "August", "September", "October", "November", "December",
 ];
 
-/** Newest first in blog list (index 0 = latest post). Dates assigned in main() from Jun 2023 → +30 mo, reversed. */
+/** Newest first in blog list (index 0 = latest post). */
 const META = [
+  [
+    "pfas-free-cosmetic-packaging-checklist-for-export-brands.html",
+    "PFAS-Free Cosmetic Packaging: A 2025 Export Checklist for Tube, Cap, and Coating Choices",
+    "How brands and tube suppliers can document PFAS-free scopes with evidence-ready questions for 2025/2026 RFQs.",
+    "December 4, 2025 · 10:24 AM",
+  ],
+  [
+    "digital-product-passport-dpp-for-cosmetic-packaging-tubes-data-readiness.html",
+    "Digital Product Passports (DPP) for Cosmetic Packaging: Preparing Tube and Closure Data for 2026",
+    "A practical checklist for tube suppliers to structure DPP-ready material and claim evidence for audits and retailer data feeds in 2026.",
+    "January 6, 2026 · 02:17 PM",
+  ],
+  [
+    "green-claims-and-pcr-content-labeling-for-cosmetic-packaging-2026.html",
+    "Green Claims and PCR Content Labeling for Cosmetic Tubes in 2026: PCR Without Backfire",
+    "How to define PCR claim scope, lock chain-of-custody evidence, and design labels that survive recycled-content scrutiny.",
+    "February 3, 2026 · 11:08 AM",
+  ],
+  [
+    "cosmetic-packaging-microplastics-inks-and-risk-control-for-suppliers.html",
+    "Microplastics in Cosmetic Packaging: Ink, Coating, and Abrasion Risk Control for Tube Programs",
+    "A supplier Q&A and testing workflow for cosmetic tubes to reduce wear-driven micro-fragment risk and support compliance narratives.",
+    "March 4, 2026 · 03:41 PM",
+  ],
+  [
+    "refillable-and-reuse-systems-for-cosmetic-packaging-tubes-and-pumps.html",
+    "Refill and Reuse Systems for Cosmetic Brands: Designing Tube-Based Programs That Actually Scale",
+    "A practical guide to reuse logistics, hygiene controls, return QA, and the sustainability metrics that keep refill programs credible in 2026.",
+    "April 3, 2026 · 09:52 AM",
+  ],
   ["mono-material-pp-recyclable-cosmetic-tube-design-trends.html", "Mono-Material PP Cosmetic Tubes: Recyclable Design Trends for Global Brands", "Why mono-polypropylene cosmetic tubes help meet EU sorting rules, PP recycling streams, and brand ESG reporting without sacrificing decoration."],
   ["airless-pump-tubes-vs-airless-bottles-buyers-guide.html", "Airless Pump Tubes vs. Airless Bottles: A Procurement Guide for Skincare Brands", "Compare airless pump tubes and classic airless bottles for oxidation-prone creams, travel formats, and MOQ-sensitive launches."],
   ["pcr-post-consumer-recycled-cosmetic-tubes-sourcing-guide.html", "PCR Cosmetic Tubes: A Practical Sourcing Guide for Post-Consumer Recycled PE and PP", "How to plan color drift, odor, lot traceability, and claims when buying PCR plastic tubes for personal care."],
@@ -102,12 +139,12 @@ function pickPublishDay(year, month1to12, salt) {
   return c[idx];
 }
 
-/** Chronological: Jun 2023, Jul 2023, … (30 months → Nov 2025). Then reverse so [0] is newest. */
-function publishDatesNewestFirst() {
+/** Chronological: Jun 2023, Jul 2023, … Then reverse so [0] is newest (used as fallback). */
+function publishDatesNewestFirst(count) {
   const chronological = [];
   let y = 2023;
   let m = 6;
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < count; i++) {
     const day = pickPublishDay(y, m, i);
     chronological.push([y, m, day]);
     m += 1;
@@ -117,6 +154,32 @@ function publishDatesNewestFirst() {
     }
   }
   return chronological.reverse();
+}
+
+function extractDtLineFromHtml(html) {
+  const m = html.match(
+    /([A-Za-z]+ \d{1,2}, \d{4})\s·\s(\d{1,2}:\d{2} [AP]M)/,
+  );
+  if (!m) return null;
+  return `${m[1]} · ${m[2]}`;
+}
+
+function dtLineToMs(dtLine) {
+  const m = dtLine.match(
+    /([A-Za-z]+) (\d{1,2}), (\d{4})\s·\s(\d{1,2}):(\d{2}) (AM|PM)/,
+  );
+  if (!m) return 0;
+  const monthName = m[1];
+  const monthIdx = MONTH_NAMES.indexOf(monthName);
+  if (monthIdx < 0) return 0;
+  let hour = Number(m[4]);
+  const minute = Number(m[5]);
+  const ap = m[6];
+  if (ap === "PM" && hour !== 12) hour += 12;
+  if (ap === "AM" && hour === 12) hour = 0;
+  const year = Number(m[3]);
+  const day = Number(m[2]);
+  return new Date(year, monthIdx, day, hour, minute).getTime();
 }
 
 function keywordsFromTitle(title) {
@@ -413,13 +476,34 @@ function buildListPage(blogHtml, items, page, totalPages) {
 }
 
 function main() {
-  if (META.length !== 30) throw new Error("META must be 30");
-  if (ARTICLE_BODIES.length !== 30) throw new Error("ARTICLE_BODIES must be 30");
+  if (META.length !== ARTICLE_BODIES.length) {
+    throw new Error(
+      `META and ARTICLE_BODIES length mismatch: META=${META.length} ARTICLE_BODIES=${ARTICLE_BODIES.length}`,
+    );
+  }
   const tpl = fs.readFileSync(TEMPLATE, "utf8");
   const [headBase, tail] = splitTemplate(tpl);
-  const dates = publishDatesNewestFirst();
-  const enriched = META.map(([slug, title, excerpt], i) => {
-    const [y, m, day] = dates[i];
+
+  const dtLineBySlug = {};
+  for (const meta of META) {
+    const slug = meta[0];
+    const articlePath = path.join(ROOT, slug);
+    if (!fs.existsSync(articlePath)) continue;
+    const html = fs.readFileSync(articlePath, "utf8");
+    const dtLine = extractDtLineFromHtml(html);
+    if (dtLine) dtLineBySlug[slug] = dtLine;
+  }
+
+  const dates = publishDatesNewestFirst(META.length);
+  const enriched = META.map((meta, i) => {
+    const [slug, title, excerpt, fixedDtLine] = meta;
+    const [y, monthIdx, day] = dates[i];
+
+    const fallbackDateStr = `${MONTH_NAMES[monthIdx]} ${day}, ${y}`;
+    const fallbackDtLine = `${fallbackDateStr} · ${TIMES[i % TIMES.length]}`;
+    const dtLine = fixedDtLine || dtLineBySlug[slug] || fallbackDtLine;
+    const dateStr = dtLine.split(" · ")[0];
+
     const desc =
       excerpt.length > 155 ? excerpt.slice(0, 152).trim() + "…" : excerpt;
     const ab = ARTICLE_BODIES[i];
@@ -427,7 +511,6 @@ function main() {
     const sections = imgMeta
       ? applyImageMeta(ab.sections, imgMeta)
       : ab.sections;
-    const dateStr = `${MONTH_NAMES[m]} ${day}, ${y}`;
     const listImage =
       ab.listImage ||
       (imgMeta
@@ -449,32 +532,41 @@ function main() {
       ).slice(0, 255),
       bodyHtml: sectionsToHtml(sections),
       listDate: dateStr,
-      dtLine: `${dateStr} · ${TIMES[i]}`,
+      dtLine,
       listImage,
       ogImage,
     };
   });
 
-  for (let i = 0; i < enriched.length; i++) {
-    const older = i < enriched.length - 1 ? enriched[i + 1] : null;
-    const newer = i > 0 ? enriched[i - 1] : null;
+  const enrichedSorted = enriched
+    .slice()
+    .sort((a, b) => dtLineToMs(b.dtLine) - dtLineToMs(a.dtLine));
+
+  for (let i = 0; i < enrichedSorted.length; i++) {
+    const older =
+      i < enrichedSorted.length - 1 ? enrichedSorted[i + 1] : null;
+    const newer = i > 0 ? enrichedSorted[i - 1] : null;
     const html = buildArticleHtml(
       headBase,
       tail,
-      enriched[i],
-      enriched[i].bodyHtml,
-      enriched[i].dtLine,
+      enrichedSorted[i],
+      enrichedSorted[i].bodyHtml,
+      enrichedSorted[i].dtLine,
       older,
       newer,
     );
-    fs.writeFileSync(path.join(ROOT, enriched[i].slug), html, "utf8");
+    fs.writeFileSync(
+      path.join(ROOT, enrichedSorted[i].slug),
+      html,
+      "utf8",
+    );
   }
 
   const blogHtml = fs.readFileSync(BLOG_LIST_SRC, "utf8");
   const perPage = 10;
-  const totalPages = 3;
+  const totalPages = Math.ceil(enrichedSorted.length / perPage);
   for (let page = 1; page <= totalPages; page++) {
-    const chunk = enriched.slice((page - 1) * perPage, page * perPage);
+    const chunk = enrichedSorted.slice((page - 1) * perPage, page * perPage);
     const items = chunk
       .map((a) =>
         renderListItem(a.slug, a.title, a.listDate, a.excerpt, a.listImage),
@@ -485,7 +577,9 @@ function main() {
     fs.writeFileSync(path.join(ROOT, name), out, "utf8");
   }
 
-  console.log("OK: 30 articles + blog.html + blog_p2.html + blog_p3.html");
+  console.log(
+    `OK: ${enriched.length} articles + blog.html + blog_p1..blog_p${totalPages}.html`,
+  );
 }
 
 main();

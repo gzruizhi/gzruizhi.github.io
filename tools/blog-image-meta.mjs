@@ -8,6 +8,11 @@ export const BLOG_IMAGE_EXT = ".png";
 /** @type {(null | { base: string, prompts: [string, string, string], figures: { alt: string, caption: string }[] })[]} */
 export const BLOG_IMAGE_META = [
   null,
+  null,
+  null,
+  null,
+  null,
+  null,
   {
     base: "airless-tube-bottle",
     prompts: [
