@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="420" viewBox="0 0 820 420">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .title { font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; fill: #222; }
+      .label { font-family: Arial, Helvetica, sans-serif; font-size: 12px; fill: #333; }
+      .note { font-family: Arial, Helvetica, sans-serif; font-size: 11px; fill: #555; }
+      .layer-pe { fill: #c8e6c9; stroke: #4caf50; stroke-width: 1; }
+      .layer-adh { fill: #fff9c4; stroke: #fbc02d; stroke-width: 1; }
+      .layer-evoh { fill: #bbdefb; stroke: #1976d2; stroke-width: 1; }
+      .layer-single { fill: #e0e0e0; stroke: #757575; stroke-width: 1; }
+    ]]></style>
+  </defs>
+  <rect width="820" height="420" fill="#fafafa"/>
+  <text x="410" y="28" text-anchor="middle" class="title">Co-extruded barrier tube vs. single-layer PE tube (cross-section)</text>
+
+  <!-- Left: 5-layer -->
+  <text x="205" y="58" text-anchor="middle" class="title">Five-layer co-extruded tube</text>
+  <text x="205" y="78" text-anchor="middle" class="note">PE / adhesive / EVOH / adhesive / PE</text>
+  <g transform="translate(25, 95)">
+    <rect x="0" y="0" width="360" height="36" class="layer-pe"/>
+    <text x="180" y="23" text-anchor="middle" class="label">PE (outer)</text>
+    <rect x="0" y="40" width="360" height="28" class="layer-adh"/>
+    <text x="180" y="58" text-anchor="middle" class="label">Adhesive</text>
+    <rect x="0" y="72" width="360" height="36" class="layer-evoh"/>
+    <text x="180" y="95" text-anchor="middle" class="label">EVOH (oxygen barrier)</text>
+    <rect x="0" y="112" width="360" height="28" class="layer-adh"/>
+    <text x="180" y="130" text-anchor="middle" class="label">Adhesive</text>
+    <rect x="0" y="144" width="360" height="36" class="layer-pe"/>
+    <text x="180" y="167" text-anchor="middle" class="label">PE (inner)</text>
+  </g>
+  <text x="205" y="268" text-anchor="middle" class="note">Typical OTR range: about 0.21.2 (barrier units)</text>
+
+  <!-- Right: single -->
+  <text x="615" y="58" text-anchor="middle" class="title">Single-layer PE tube</text>
+  <text x="615" y="78" text-anchor="middle" class="note">No EVOH barrier layer</text>
+  <g transform="translate(435, 95)">
+    <rect x="0" y="0" width="360" height="180" class="layer-single"/>
+    <text x="180" y="100" text-anchor="middle" class="label">PE (single layer)</text>
+  </g>
+  <text x="615" y="298" text-anchor="middle" class="note">Typical OTR range: about 150300</text>
+
+  <text x="410" y="360" text-anchor="middle" class="note">EVOH thickness ~1520 µm is often effective for barrier and fragrance retention.</text>
+  <text x="410" y="385" text-anchor="middle" class="note">Figures are illustrative; actual values depend on resin grade, film thickness, and test conditions.</text>
+</svg>
