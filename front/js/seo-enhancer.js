@@ -4,6 +4,8 @@
   var ORIGIN = "https://www.ruizhipack.com";
   var ORG_NAME = "GUANGZHOU RUIZHI INDUSTRIAL CO., LTD.";
   var LOGO_URL = ORIGIN + "/storage/uploads/images/202308/31/1693468561_SKWv4J0dF7.jpg";
+  var DEFAULT_SHARE_IMAGE =
+    ORIGIN + "/storage/uploads/images/202309/02/1693636724_9ruC4SNKvx.jpg";
 
   function normalizePath(pathname) {
     var path = pathname || "/";
@@ -35,15 +37,120 @@
     canonical.setAttribute("href", url);
   }
 
-  function getMainImage() {
-    var preferred = document.querySelector(".proleft img, .detail img, .content img, .product img");
-    var any = preferred || document.querySelector("img");
-    if (!any) return LOGO_URL;
-    var src = any.getAttribute("src") || "";
-    if (!src) return LOGO_URL;
+  function toAbsUrl(src) {
+    if (!src) return "";
     if (/^https?:\/\//i.test(src)) return src;
     if (src.startsWith("//")) return "https:" + src;
     return ORIGIN + (src.startsWith("/") ? src : "/" + src);
+  }
+
+  function guessImageTypeFromUrl(url) {
+    var clean = (url || "").split("?")[0].split("#")[0].toLowerCase();
+    if (clean.endsWith(".png")) return "image/png";
+    if (clean.endsWith(".webp")) return "image/webp";
+    if (clean.endsWith(".gif")) return "image/gif";
+    if (clean.endsWith(".jpg") || clean.endsWith(".jpeg")) return "image/jpeg";
+    return "";
+  }
+
+  function getMainImageCandidate() {
+    var path = normalizePath(window.location.pathname);
+    // Index / default home page: force default share image
+    if (path === "/") {
+      return {
+        url: DEFAULT_SHARE_IMAGE,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(DEFAULT_SHARE_IMAGE)
+      };
+    }
+
+    // Prefer any existing OG image set by server templates (if present)
+    var og = document.head.querySelector('meta[property="og:image"]');
+    var ogUrl = og ? toAbsUrl((og.getAttribute("content") || "").trim()) : "";
+    if (ogUrl) {
+      return {
+        url: ogUrl,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(ogUrl)
+      };
+    }
+
+    var nodes = Array.prototype.slice.call(document.images || []);
+    if (!nodes.length) {
+      return {
+        url: DEFAULT_SHARE_IMAGE,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(DEFAULT_SHARE_IMAGE)
+      };
+    }
+
+    var best = null;
+    for (var i = 0; i < nodes.length; i++) {
+      var img = nodes[i];
+      if (!img) continue;
+
+      var src =
+        img.currentSrc ||
+        img.getAttribute("src") ||
+        img.getAttribute("data-src") ||
+        img.getAttribute("data-original") ||
+        "";
+      src = (src || "").trim();
+      if (!src) continue;
+      if (/^data:/i.test(src)) continue;
+
+      var abs = toAbsUrl(src);
+      if (!abs) continue;
+      if (/\.svg(\?|#|$)/i.test(abs)) continue;
+
+      // Prefer larger "real" images; ignore tiny icons/logos
+      var w =
+        (img.naturalWidth || 0) ||
+        parseInt(img.getAttribute("width") || "0", 10) ||
+        0;
+      var h =
+        (img.naturalHeight || 0) ||
+        parseInt(img.getAttribute("height") || "0", 10) ||
+        0;
+      var area = w * h;
+      if (area && area < 40000) continue; // e.g. < 200x200
+
+      var cand = {
+        url: abs,
+        width: w,
+        height: h,
+        type: guessImageTypeFromUrl(abs),
+        area: area
+      };
+
+      if (!best) {
+        best = cand;
+        continue;
+      }
+
+      var bestArea = best.area || (best.width || 0) * (best.height || 0) || 0;
+      var candArea = cand.area || 0;
+      if (candArea > bestArea) {
+        best = cand;
+      } else if (candArea === bestArea) {
+        // tie-breaker: prefer larger width then non-logo-ish paths
+        if ((cand.width || 0) > (best.width || 0)) best = cand;
+      }
+    }
+
+    if (!best || !best.url) {
+      return {
+        url: DEFAULT_SHARE_IMAGE,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(DEFAULT_SHARE_IMAGE)
+      };
+    }
+
+    return best;
   }
 
   function getBreadcrumbJsonLd(canonicalUrl) {
@@ -102,11 +209,18 @@
   upsertMeta("property", "og:description", description);
   upsertMeta("property", "og:url", canonicalUrl);
   upsertMeta("property", "og:type", normalizePath(window.location.pathname) === "/" ? "website" : "product");
-  upsertMeta("property", "og:image", getMainImage());
+
+  var shareImg = getMainImageCandidate();
+  upsertMeta("property", "og:image", shareImg.url);
+  // WhatsApp / Facebook-friendly extras
+  upsertMeta("property", "og:image:secure_url", shareImg.url);
+  if (shareImg.type) upsertMeta("property", "og:image:type", shareImg.type);
+  if (shareImg.width) upsertMeta("property", "og:image:width", String(shareImg.width));
+  if (shareImg.height) upsertMeta("property", "og:image:height", String(shareImg.height));
   upsertMeta("name", "twitter:card", "summary_large_image");
   upsertMeta("name", "twitter:title", title);
   upsertMeta("name", "twitter:description", description);
-  upsertMeta("name", "twitter:image", getMainImage());
+  upsertMeta("name", "twitter:image", shareImg.url);
 
   injectJsonLd("rz-org-jsonld", {
     "@context": "https://schema.org",
