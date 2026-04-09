@@ -13,8 +13,8 @@ const EXCLUDE = new Set([
   "custom-cosmetic-packaging-moq-and-oem-planning.html",
   "digital-product-passport-dpp-for-cosmetic-packaging-tubes-data-readiness.html",
   "green-claims-and-pcr-content-labeling-for-cosmetic-packaging-2026.html",
-  "oem-odm-cosmetic-tube-packaging-manufacturer.html",
-  "customization.html",
+  "oem.html",
+  "oem.html",
   "sitemap.html",
 ]);
 

@@ -3,14 +3,14 @@ const path = require("path");
 
 const root = path.resolve(__dirname, "..");
 const aboutPath = path.join(root, "about-us.html");
-const outPath = path.join(root, "oem-odm-cosmetic-tube-packaging-manufacturer.html");
+const outPath = path.join(root, "oem.html");
 
 let html = fs.readFileSync(aboutPath, "utf8");
 
 const headBlock = `        <title>OEM &amp; ODM Cosmetic Tube Packaging Manufacturer | Ruizhi Guangzhou</title> 
         <meta name="description" content="OEM and ODM cosmetic packaging manufacturer in Guangzhou: squeeze tubes, airless pump tubes, bottles, applicators. Private label, custom caps, offset &amp; screen print, PCR/sugarcane/kraft options. Export worldwide."> 
         <meta name="keywords" content="OEM cosmetic packaging, ODM cosmetic tubes, cosmetic packaging manufacturer China, private label tubes, wholesale cosmetic packaging B2B"> 
-        <link rel="canonical" href="https://www.ruizhipack.com/oem-odm-cosmetic-tube-packaging-manufacturer.html">
+        <link rel="canonical" href="https://www.ruizhipack.com/oem.html">
         <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -64,7 +64,7 @@ const bodyContent = `                <div class="about page newm">
                         <h2 style="font-size:22px;margin-top:24px;">Related pages</h2> 
                         <p> 
                             <a href="cosmetic-tubes-packaging-for-sale.html">Cosmetic tubes catalog</a> · 
-                            <a href="customization.html">Customization &amp; development</a> · 
+                            <a href="oem.html">OEM/ODM &amp; development</a> · 
                             <a href="custom-cosmetic-packaging-moq-and-oem-planning.html">MOQ &amp; OEM planning guide</a> · 
                             <a href="contact-us.html">Contact &amp; quotes</a> 
                         </p> 
