@@ -1,0 +1,117 @@
+SEO batch report
+Generated: 2026-04-10T03:39:23.374Z
+Root HTML files scanned: 1527
+Files changed: 454
+Canonical added: 0
+Schema injected (Product/Article): 454
+Missing meta description after run: 0
+Pages without meta keywords (skipped canonical insert): 0
+
+--- Canonical added (first 100) ---
+
+--- Schema injected (first 100) ---
+- 10-20ml-empty-eyebrow-tube-with-wand-brush.html
+- 10-20ml-empty-lip-gloss-tube-with-wand-flocked-brush.html
+- 10-20ml-empty-mascara-tube-with-wand-brush.html
+- 10-20ml-mini-flip-cap-tube-for-cleanser-and-moisturizer.html
+- 10-20ml-silicone-mascara-tube-with-wand-brush.html
+- 10-250g-cosmetic-tube-with-acrylic-cap-for-face-cream.html
+- 10-25g-anti-wrinkle-cream-tube-with-single-roller-ball.html
+- 10-25g-cosmetic-abl-tube-with-metal-applicator-for-eye-cream.html
+- 10-25g-eye-cream-anti-wrinkle-massage-roller-tube.html
+- 10-25g-eye-cream-tube-with-stainless-steel-ball.html
+- 10-25g-makeup-concealer-tube-with-sponge-applicator.html
+- 10-25ml-abl-high-glossy-eye-cream-tube.html
+- 10-25ml-abl-high-glossy-eye-serum-tube.html
+- 10-25ml-abl-lip-blam-tube-with-ceramic-applicator.html
+- 10-25ml-abl-vibration-eye-cream-tube-with-switch-botton.html
+- 10-25ml-blackhead-remover-mask-tube-with-silicone-applicator.html
+- 10-25ml-eye-anti-wrinkle-cream-tube-with-acrylic-lid.html
+- 10-25ml-eye-cream-acrylic-tube-packaging.html
+- 10-25ml-eye-cream-tube-with-zinc-alloy-applicator.html
+- 10-25ml-eye-essence-high-glossy-abl-packaging-tube.html
+- 10-25ml-eye-essence-tube-with-ceramic-applicator.html
+- 10-25ml-eye-essence-tube-with-long-nozzle-cap.html
+- 10-25ml-eye-essence-tube-with-zinc-alloy-applicator.html
+- 10-25ml-facial-cleanser-pe-tube-with-luxury-cap.html
+- 10-25ml-hair-mash-brush-applicator-pe-packaging-tube.html
+- 10-25ml-high-glossy-abl-vibration-tube-for-eye-cream.html
+- 10-25ml-khaki-facial-cleanser-tube-with-flip-top-cap.html
+- 10-25ml-lip-balm-lip-oil-packaging-tube.html
+- 10-25ml-lip-balm-tube-with-soft-silicone-applicator.html
+- 10-25ml-lip-oil-packaging-tube-with-pp-applicator.html
+- 10-25ml-lip-serum-balm-tube-with-stainless-steel-ball.html
+- 10-25ml-lipstick-packaging-tube-with-plastic-applicator.html
+- 10-25ml-luxury-golden-airless-pump-cosmetic-tube-for-eye-repair-gel.html
+- 10-25ml-massage-cream-tube-with-single-roller-on-ball.html
+- 10-25ml-mini-facial-cleanser-cosmetic-plastic-tube.html
+- 10-25ml-nail-nutrient-polish-oil-tube-packaging.html
+- 10-25ml-pink-extruded-lipstick-packaging-applicator-tube.html
+- 10-30ml-cosmetic-nozzle-tube-packaging-for-acne-essence.html
+- 10-30ml-nozzle-cosmetic-tube-with-hot-stamping-cap-for-face.html
+- 10-30ml-nozzle-oval-cosmetic-tube-with-hanging-cap.html
+- 10-35ml-high-grade-hand-cream-acrylic-tube.html
+- 100-180g-body-scrub-oval-flat-plastic-tube.html
+- 100-180g-facial-cleanser-tube-with-two-parts-pp-cap.html
+- 100-180g-sunscreen-cream-oval-tube-packaging.html
+- 100-180ml-men-facial-cleanser-plastic-tube.html
+- 100-200ml-cosmetic-massage-roller-tube-for-neck-cream.html
+- 100-200ml-massage-roller-wheel-neck-cream-tubes-packaging.html
+- 100-250g-cosmetic-oval-massage-roller-tube-for-neck-cream.html
+- 100g-facial-cleanser-tube-with-water-transfer-bamboo-cap.html
+- 100g-lady-face-cream-cosmetic-plastic-jar.html
+- 100g-toothpaste-laminated-tube-packaging-with-screw-cap.html
+- 100ml-120ml-facial-toner-pet-bottle-with-double-layers-cap.html
+- 100ml-body-lotion-gel-cosmetic-pet-bottle.html
+- 100ml-cosmetic-face-cream-airless-pump-bottle.html
+- 100ml-cosmetic-hand-soap-square-pump-bottle.html
+- 100ml-cosmetic-pet-mist-sprayer-pump-bottle.html
+- 100ml-cosmetic-plastic-men-perfume-mist-spray-bottle.html
+- 100ml-face-cream-cosmetic-lotion-pump-bottle.html
+- 100ml-face-hydrating-pet-mist-spray-pump-bottle.html
+- 100ml-facial-cleansing-foam-cream-plastic-tube.html
+- 100ml-glue-nail-polish-oil-cosmetic-plastic-bottle.html
+- 100ml-hand-soap-cosmetic-hdpe-bottle.html
+- 100ml-mouthwash-plastic-hdpe-bottle.html
+- 100ml-pet-bottle-for-brightening-essence-cream.html
+- 100ml-shoe-cleaner-hdpe-bottle-with-brush-head.html
+- 100ml-stainless-roller-tops-massage-cream-tube-for-lotion.html
+- 100ml250ml-new-arrival-hair-scalp-care-tube-with-comb-applicator.html
+- 10g-lip-balm-tube-with-metal-applicator.html
+- 10ml-lip-glaze-tube-with-switch-on-and-off-applicator.html
+- 120-220ml-body-cream-tube-with-flip-top-hexagonal-cap.html
+- 120-240ml-luxury-cosmetic-tube-with-silicone-massage-brush-head.html
+- 120g-body-lotion-body-deodorant-roll-on-tube-packaging.html
+- 120ml-150ml-cosmetic-facial-cleanser-foam-bottle.html
+- 120ml-150ml-cosmetic-plastic-foam-lotion-pump-bottle.html
+- 120ml-eco-friendly-paper-plastic-tube-with-flip-cap.html
+- 15-30ml-airless-pump-tube-cosmetic-packaging.html
+- 15-30ml-airless-pump-tube-for-eye-serum.html
+- 15-30ml-concealer-liquid-foundation-applicator-sponge-tube.html
+- 15-30ml-cosmetic-eye-cream-abl-nozzle-tube.html
+- 15-30ml-luxury-eye-contour-tube-with-nozzle-and-new-cap.html
+- 15-30ml-make-up-applicator-sponge-tube-for-liquid-foundation.html
+- 15-30ml-petg-dropper-tip-cosmetic-tube-for-face-care.html
+- 15-30ml-portable-lotion-tube-with-stainless-key-chain.html
+- 15-35ml-face-wash-pe-tube-with-square-pp-cap.html
+- 15-35ml-greenblueorange-facial-cleanser-pe-tube.html
+- 15-35ml-oval-plastic-soft-sunscreen-tube.html
+- 15-45g-bb-cc-cream-airless-pump-tube.html
+- 15-45ml-abl-face-cream-tube-with-stainless-steel-cap.html
+- 15-45ml-abl-hand-cream-tube-with-portable-ss-chain.html
+- 15-45ml-abl-makeup-primer-packaging-tube.html
+- 15-45ml-abl-makeup-primer-tube-with-soft-sponge.html
+- 15-45ml-abl-pink-skincare-tube-with-portable-ss-chain.html
+- 15-45ml-cosmetic-facial-moisturizing-pump-spray-tube.html
+- 15-45ml-hand-cream-nozzle-tube-with-acrylic-cap.html
+- 15-45ml-holographic-hot-stamping-face-primer-nozzle-tube.html
+- 15-45ml-pbl-hand-cream-tube-with-portable-ss-chain.html
+- 15-50g-eye-cream-tubes-with-long-nozzle.html
+- 15-50ml-cosmetic-liquid-foundation-nozzle-tube.html
+- 15-50ml-cosmetic-soft-nozzle-tube-for-sunscreen.html
+- 15-50ml-sunscreen-cream-metallized-aluminum-plastic-oval-tube.html
+... and 354 more
+
+--- Missing description (first 100) ---
+
+--- 子目录 HTML（未处理）---
