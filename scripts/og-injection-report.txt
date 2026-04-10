@@ -150,7 +150,7 @@ Pages using default share image (no rule-matched image): 35
 --- 中文统计 ---
 已写入 OG / Twitter 标签的站点根目录 HTML: 1527
 未设置 og:site_name 的根目录页面（本批处理后应为 0）: 0
-使用默认分享图 mainshare.png 的页面数: 35
+使用默认分享图 share2026.jpg 的页面数: 35
 子目录内 HTML（本脚本未注入 OG，共 8 个）:
   - front/images/bg_about.html
   - front/images/cate_l.html

@@ -5,7 +5,7 @@
   var ORG_NAME = "GUANGZHOU RUIZHI INDUSTRIAL CO., LTD.";
   var LOGO_URL = ORIGIN + "/storage/uploads/images/202308/31/1693468561_SKWv4J0dF7.jpg";
   var DEFAULT_SHARE_IMAGE =
-    ORIGIN + "/storage/uploads/images/202604/04/mainshare.png";
+    ORIGIN + "/storage/uploads/images/202604/04/share2026.jpg";
   var OEM_SHARE_IMAGE =
     ORIGIN + "/storage/uploads/images/202205/31/1653965834_O9egSU6E4n.jpg";
 

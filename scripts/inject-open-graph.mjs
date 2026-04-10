@@ -10,7 +10,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
 const ORIGIN = "https://www.ruizhipack.com";
-const DEFAULT_IMAGE = `${ORIGIN}/storage/uploads/images/202604/04/mainshare.png`;
+const DEFAULT_IMAGE = `${ORIGIN}/storage/uploads/images/202604/04/share2026.jpg`;
 const OEM_IMAGE = `${ORIGIN}/storage/uploads/images/202205/31/1653965834_O9egSU6E4n.jpg`;
 
 const RE_KEYWORDS = /<meta\s+name=["']keywords["'][^>]*>/i;
@@ -313,7 +313,7 @@ function main() {
     `--- 中文统计 ---`,
     `已写入 OG / Twitter 标签的站点根目录 HTML: ${stats.updated}`,
     `未设置 og:site_name 的根目录页面（本批处理后应为 0）: 0`,
-    `使用默认分享图 mainshare.png 的页面数: ${stats.usedDefaultImage.length}`,
+    `使用默认分享图 share2026.jpg 的页面数: ${stats.usedDefaultImage.length}`,
     `子目录内 HTML（本脚本未注入 OG，共 ${nestedHtml.length} 个）:`,
     ...nestedHtml.map((f) => `  - ${f}`),
   ].filter(Boolean);
