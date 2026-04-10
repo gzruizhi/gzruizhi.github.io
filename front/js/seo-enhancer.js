@@ -6,6 +6,8 @@
   var LOGO_URL = ORIGIN + "/storage/uploads/images/202308/31/1693468561_SKWv4J0dF7.jpg";
   var DEFAULT_SHARE_IMAGE =
     ORIGIN + "/storage/uploads/images/202604/04/mainshare.png";
+  var OEM_SHARE_IMAGE =
+    ORIGIN + "/storage/uploads/images/202205/31/1653965834_O9egSU6E4n.jpg";
 
   function normalizePath(pathname) {
     var path = pathname || "/";
@@ -53,6 +55,21 @@
     return "";
   }
 
+  function firstImgUrlIn(el) {
+    if (!el) return "";
+    var img = el.querySelector("img");
+    if (!img) return "";
+    var src =
+      img.currentSrc ||
+      img.getAttribute("src") ||
+      img.getAttribute("data-src") ||
+      img.getAttribute("data-original") ||
+      "";
+    src = (src || "").trim();
+    if (!src || /^data:/i.test(src)) return "";
+    return toAbsUrl(src);
+  }
+
   function getMainImageCandidate() {
     var path = normalizePath(window.location.pathname);
     // Index / default home page: force default share image
@@ -74,6 +91,50 @@
         width: 0,
         height: 0,
         type: guessImageTypeFromUrl(ogUrl)
+      };
+    }
+
+    if (path === "/oem.html" || path.endsWith("/oem.html")) {
+      return {
+        url: OEM_SHARE_IMAGE,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(OEM_SHARE_IMAGE)
+      };
+    }
+
+    var blogBody = document.querySelector("div.blog_p.page.newm");
+    var fromBlog = firstImgUrlIn(blogBody);
+    if (fromBlog) {
+      return {
+        url: fromBlog,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(fromBlog)
+      };
+    }
+
+    var prom = document.querySelector("div.prom_img.sp-wrap-video");
+    var fromProm = firstImgUrlIn(prom);
+    if (fromProm) {
+      return {
+        url: fromProm,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(fromProm)
+      };
+    }
+
+    var sidebar = document.querySelector(
+      "#sidebar.penci-sticky-sidebar.n_right"
+    );
+    var fromSide = firstImgUrlIn(sidebar);
+    if (fromSide) {
+      return {
+        url: fromSide,
+        width: 0,
+        height: 0,
+        type: guessImageTypeFromUrl(fromSide)
       };
     }
 
@@ -208,7 +269,16 @@
   upsertMeta("property", "og:title", title);
   upsertMeta("property", "og:description", description);
   upsertMeta("property", "og:url", canonicalUrl);
-  upsertMeta("property", "og:type", normalizePath(window.location.pathname) === "/" ? "website" : "product");
+  var pathNorm = normalizePath(window.location.pathname);
+  var ogTypeVal = "website";
+  if (pathNorm === "/") {
+    ogTypeVal = "website";
+  } else if (document.querySelector("div.blog_p.page.newm")) {
+    ogTypeVal = "article";
+  } else if (document.querySelector("div.prom_img.sp-wrap-video")) {
+    ogTypeVal = "product";
+  }
+  upsertMeta("property", "og:type", ogTypeVal);
 
   var shareImg = getMainImageCandidate();
   upsertMeta("property", "og:image", shareImg.url);
